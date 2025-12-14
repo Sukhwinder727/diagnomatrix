@@ -74,5 +74,8 @@ def predictBreast():
     return render_template('predictBreast.html',image_base64=image_base64, result_str=result_str, original_image_base64=original_image_base64)
 
 
-if __name__ == '__main__':
-    app.run(debug=True, port=8000)
+import os
+
+if _name_ == '_main_':
+    port = int(os.environ.get("PORT", 8000))
+    app.run(debug=True, host="0.0.0.0", port=port)
